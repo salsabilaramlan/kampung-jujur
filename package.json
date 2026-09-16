@@ -1,0 +1,20 @@
+{
+  "name": "kampung-jujur-duo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/multiplayer.test.js"
+  },
+  "dependencies": {
+    "@colyseus/core": "^0.16.0",
+    "@colyseus/schema": "^3.0.0",
+    "@colyseus/ws-transport": "^0.16.0",
+    "colyseus.js": "^0.16.0",
+    "express": "^4.21.2",
+    "three": "0.160.1"
+  }
+}

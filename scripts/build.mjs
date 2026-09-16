@@ -1,0 +1,11 @@
+import { cp, mkdir, writeFile } from 'node:fs/promises';
+await mkdir('dist/vendor', {recursive:true});
+await cp('public','dist',{recursive:true});
+await cp('node_modules/three/build/three.module.js','dist/vendor/three.module.js');
+await cp('node_modules/three/LICENSE','dist/vendor/THREE-LICENSE.txt');
+await cp('node_modules/colyseus.js/dist/colyseus.js','dist/vendor/colyseus.js');
+await cp('node_modules/colyseus.js/LICENSE','dist/vendor/COLYSEUS-LICENSE.txt');
+const endpoint=(process.env.SERVER_URL||'').trim();
+if(endpoint && !/^https?:\/\//.test(endpoint)) throw new Error('SERVER_URL must start with https:// or http://');
+await writeFile('dist/config.js',`window.GAME_SERVER=${JSON.stringify(endpoint)};\n`);
+console.log('Game files ready in dist/');
