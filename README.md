@@ -42,7 +42,13 @@ Ujian menggunakan dua sambungan Colyseus sebenar: kapasiti bilik, sedia, pergera
 
 ## Terbitkan melalui GitHub, Render dan Netlify
 
-Fail ini sudah disediakan untuk penerbitan. **Penerbitan dalam akaun hosting belum dibuat.**
+Sudah diterbitkan pada 16 September 2026:
+
+- Website murid: https://kampung-jujur-cikgujiwa.netlify.app/
+- Pelayan Render: https://kampung-jujur.onrender.com/
+- Kod sumber: https://github.com/salsabilaramlan/kampung-jujur
+
+Netlify menggunakan muat naik manual. Untuk kemas kini website, build dengan `SERVER_URL=https://kampung-jujur.onrender.com`, kemudian muat naik kandungan `dist` ke projek Netlify yang sama. Render menggunakan repositori awam; gunakan Manual Deploy → Deploy latest commit selepas kod pelayan berubah. Muat naik kod GitHub sahaja tidak semestinya menerbitkan kedua-duanya.
 
 ### 1. GitHub
 
@@ -109,6 +115,6 @@ Sunting `public/shared.js`. Setiap misi memerlukan dua tugasan dengan `role` 0 d
 
 ## Teknologi dan lesen
 
-Three.js 0.160.1, Colyseus 0.16, Express. Aset watak dan kampung dibentuk dalam kod menggunakan geometri asli. Lesen perpustakaan disalin ke `dist/vendor`. Font Google DM Sans dan Outfit mempunyai fallback sistem. Tiada akaun Roblox atau aset Roblox diperlukan.
+Three.js 0.160.1, Colyseus 0.16, Express. Nanoid dioverride kepada 3.3.18 atau patch lebih baharu; skrip postinstall menyesuaikan import Colyseus lama dengan eksport bernama Nanoid. Ujian rangkaian mengesahkan keserasian. Aset watak dan kampung dibentuk dalam kod menggunakan geometri asli. Lesen perpustakaan disalin ke `dist/vendor`. Font Google DM Sans dan Outfit mempunyai fallback sistem. Tiada akaun Roblox atau aset Roblox diperlukan.
 
 Rujukan hosting: [Render Node/Express](https://render.com/docs/deploy-node-express-app), [Netlify build environment variables](https://docs.netlify.com/build/configure-builds/environment-variables/).

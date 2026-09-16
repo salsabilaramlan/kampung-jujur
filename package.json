@@ -5,10 +5,12 @@
   "type": "module",
   "engines": { "node": ">=20" },
   "scripts": {
+    "postinstall": "node scripts/patch-colyseus.mjs",
     "start": "node server/index.js",
     "build": "node scripts/build.mjs",
     "test": "node --test test/multiplayer.test.js"
   },
+  "overrides": { "nanoid": "^3.3.18" },
   "dependencies": {
     "@colyseus/core": "^0.16.0",
     "@colyseus/schema": "^3.0.0",
